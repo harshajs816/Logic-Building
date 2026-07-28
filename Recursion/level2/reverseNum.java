@@ -1,15 +1,23 @@
-package Recursion.level2;
-
 public class reverseNum {
 
-public static int reverse(int n){
-     if(n==1){
-    System.out.print(n);
- }
+            static int rev = 0;
 
- int lastDigit = reverse(n%10);
+    public static void reverse(int num){
+        if(num==0){
+           return ;
+        }
 
- return lastDigit 
-}
+        int digit = (num %10);
+         rev = rev*10 + digit;
+         reverse(num/10);
+    }
+
+
+    public static void main(String[] args) {
+
+        int num = 1234;
+        reverse(num);
+        System.out.println("Reverse Num"+rev);
+    }
     
 }
